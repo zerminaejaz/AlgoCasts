@@ -10,7 +10,6 @@
 //     return (str.split("")).reverse().join("")
 // }
 
-// another way
 // function reverse(str){
 //     // let endpoint = str.length - 1
 //     let reversed = ""
@@ -26,10 +25,8 @@
 
 //more advanced way
 function reverse(str){
-   return str.split("").reduce((reversed, character)=> {
-        return character + reversed
-   })
+   return str.split("").reduce((reversed, char)=>
+        char+ reversed, '')
 }
-
 
 module.exports = reverse;
