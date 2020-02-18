@@ -10,10 +10,6 @@
 
 function reverseInt(n) {
     reverseString = n.toString().split("").reverse().join("")
-    if(Math.sign(n) == -1)
-    {
-        return parseInt(reverseString) * -1
-    }
-    return parseInt(reverseString)
+    return parseInt(reverseString) * Math.sign(n)
 }
 module.exports = reverseInt;
