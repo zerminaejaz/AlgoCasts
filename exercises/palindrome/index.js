@@ -7,8 +7,17 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {
-    return str.split("").reverse().join("") == str
+// function palindrome(str) {
+//     return str.split("").reverse().join("") === str
+// }
+
+//solve the issue of the double comparisons
+//Array.every is not the most efficient
+function palindrome(str){
+    return str.split("").every((char, i)=>{
+        console.log(char, str[str.length-i-1])
+        return char === str[str.length-i-1]
+    })
 }
 
 module.exports = palindrome;
