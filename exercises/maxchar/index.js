@@ -7,9 +7,9 @@
 
 function maxChar(str) {
     let numOfChars = {}
-    let max = str[0]
     let strArray = str.split("")
     let length = strArray.length
+    let max = strArray[0]
 
     for(let i = 0; i<length; i++){
         if(numOfChars[str[i]]){
@@ -24,8 +24,21 @@ function maxChar(str) {
             max = key
         }
       }
-      return max
+    console.log("max: " , max)
+
+    arrayOfMax = []
+    for(let key of Object.keys(numOfChars)){
+        if(numOfChars[key] == numOfChars[max])
+        arrayOfMax.push(key)
+    }
+
+
+    return arrayOfMax
+
+    //   return max
 
 }
-
+console.log(maxChar("cc11")) // [c,1]
+console.log(maxChar("3fftittt")) // [t]
+console.log(maxChar("hhhh3333tttt")) //[hhhh3333tttt]
 module.exports = maxChar;
