@@ -9,30 +9,41 @@
 
 function maxChar(str) {
     let numOfChars = {}
-    let strArray = str.split("")
-    let length = strArray.length
-    let max = strArray[0]
-
-    for(let i = 0; i<length; i++){
-        if(numOfChars[str[i]]){
-            numOfChars[str[i]] +=1
-        }
-        else
-        numOfChars[str[i]] = 1
+    // let length = strArray.length
+    // for(let i = 0; i<length; i++){
+    //     numOfChars[str[i]]
+    //     if(numOfChars[str[i]]){
+    //         numOfChars[str[i]] +=1
+    //     }
+    //     else
+    //     numOfChars[str[i]] = 1
+    // }
+    for(let char of str){
+        numOfChars[char] = numOfChars[char] + 1 || 1
     }
     
-    for (let key of Object.keys(numOfChars)) {
-        if(numOfChars[key] >= numOfChars[max]){
-            max = key
-        }
-      }
-
-    arrayOfMax = []
-    for(let key of Object.keys(numOfChars)){
-        if(numOfChars[key] == numOfChars[max])
-        arrayOfMax.push(key)
+    let max = 0
+    let maxChar = ""
+    // for (let key of Object.keys(numOfChars)) {
+    //     if(numOfChars[key] >= max){
+    //         max = key.value
+    //         maxChar = key
+    //     }
+    //   }
+    for(let char in numOfChars){
+        if(numOfChars[char] >= max){
+                    max = numOfChars[char]
+                    maxChar = char
+                }
     }
-    return arrayOfMax
+    return maxChar
+
+    // arrayOfMax = []
+    // for(let key of Object.keys(numOfChars)){
+    //     if(numOfChars[key] == max)
+    //     arrayOfMax.push(key)
+    // }
+    // return arrayOfMax
 }
 
 console.log(maxChar("cc11")) // [c,1]
