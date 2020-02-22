@@ -34,6 +34,7 @@ function maxChar(str) {
     }
     return arrayOfMax
 }
+
 console.log(maxChar("cc11")) // [c,1]
 console.log(maxChar("3fftittt")) // [t]
 console.log(maxChar("hhhh3333tttt")) //[hhhh3333tttt]
