@@ -14,7 +14,7 @@ function anagrams(stringA, stringB) {
     if(strA.length !== strB.length){
         return false
     }
-   
+
     let mapA = createMap(strA)
     let mapB = createMap(strB)
 
@@ -22,8 +22,6 @@ function anagrams(stringA, stringB) {
         return false
     }
     else{
-        //then check deeper into the values to see if they all match
-        //while loop through one map and check to see if the keys match
         for(let [key, value] of Object.entries(mapA)){
             if(mapB[key] !== value)
                 return false
