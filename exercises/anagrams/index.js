@@ -34,7 +34,8 @@ function anagrams(stringA, stringB) {
 
 function createMap(str){
     let map = {}
-    for(let char of str){
+    let string = str.toLowerCase()
+    for(let char of string){
         if(map[char]){
             map[char] += 1
         }
