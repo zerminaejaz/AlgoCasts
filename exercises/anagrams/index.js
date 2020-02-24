@@ -36,12 +36,7 @@ function createMap(str){
     let map = {}
     let string = str.toLowerCase()
     for(let char of string){
-        if(map[char]){
-            map[char] += 1
-        }
-        else{
-            map[char] = 1
-        }
+        map[char] = map[char] + 1 || 1
     }
     return map
 }
